@@ -6,7 +6,7 @@
       {
         "id": "9193523358317ee6",
         "type": "tabs",
-        "dimension": 69.28702010968921,
+        "dimension": 74.78184991273996,
         "children": [
           {
             "id": "c9dc5e0d4fbfc92c",
@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/storybook/storybook.md",
+                "file": "projects/storybook/Storybook - init.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "storybook"
+              "title": "Storybook - init"
             }
           }
         ]
@@ -27,7 +27,7 @@
       {
         "id": "afe98d18fac15119",
         "type": "tabs",
-        "dimension": 30.712979890310788,
+        "dimension": 25.21815008726003,
         "children": [
           {
             "id": "dd72b5246c379423",
@@ -96,7 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 302.5026054382324
+    "width": 250.50260543823242
   },
   "right": {
     "id": "201b9450d3d4a930",
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects/storybook/storybook.md",
+                "file": "projects/storybook/Storybook - init.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for storybook"
+              "title": "Backlinks for Storybook - init"
             }
           },
           {
@@ -131,12 +131,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects/storybook/storybook.md",
+                "file": "projects/storybook/Storybook - init.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from storybook"
+              "title": "Outgoing links from Storybook - init"
             }
           },
           {
@@ -160,13 +160,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "projects/storybook/storybook.md",
+                "file": "projects/storybook/Storybook - init.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of storybook"
+              "title": "Outline of Storybook - init"
             }
           },
           {
@@ -184,7 +184,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,9 +200,16 @@
   },
   "active": "c9dc5e0d4fbfc92c",
   "lastOpenFiles": [
+    "assets/Pasted image 20250225232459.png",
+    "assets/Pasted image 20250225232045.png",
+    "assets/Pasted image 20250225231848.png",
+    "assets",
+    "Pasted image 20250225231808.png",
+    "projects/storybook/Storybook - init.md",
     "Welcome.md",
+    "crackked/deep learning -.md",
+    "crackked",
     "projects/storybook",
-    "projects",
-    "projects/storybook/storybook.md"
+    "projects"
   ]
 }
