@@ -1,5 +1,5 @@
 ## About 
-Creating a stor
+Creating a story
 
 ![[Pasted image 20250225232459.png|200]] 
 https://www.instagram.com/reel/DDruE3mpu2-/

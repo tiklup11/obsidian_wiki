@@ -6,6 +6,7 @@
       {
         "id": "9193523358317ee6",
         "type": "tabs",
+        "dimension": 69.89329268292683,
         "children": [
           {
             "id": "c9dc5e0d4fbfc92c",
@@ -13,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project storybook.md",
+                "file": "Project - storybook.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Project storybook"
+              "title": "Project - storybook"
             }
           },
           {
@@ -27,12 +28,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project - InterviewInd.md",
+                "file": "Project - interview.Ind.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Project - InterviewInd"
+              "title": "Project - interview.Ind"
+            }
+          },
+          {
+            "id": "b19251478dfe9cc0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Wiki - Deep learning.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Wiki - Deep learning"
+            }
+          },
+          {
+            "id": "7ff628a19ca7c2de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Wiki - Deep learning for coders.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Wiki - Deep learning for coders"
             }
           },
           {
@@ -50,7 +79,24 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
+      },
+      {
+        "id": "1a99a611fcf8cdcd",
+        "type": "tabs",
+        "dimension": 30.106707317073173,
+        "children": [
+          {
+            "id": "1367ae9a1938c9ea",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +153,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.50390243530273
+    "width": 254.50390243530273
   },
   "right": {
     "id": "201b9450d3d4a930",
@@ -123,7 +169,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project - InterviewInd.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +178,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Project - InterviewInd"
+              "title": "Backlinks"
             }
           },
           {
@@ -142,12 +187,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Project - InterviewInd.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Project - InterviewInd"
+              "title": "Outgoing links"
             }
           },
           {
@@ -171,13 +215,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project - InterviewInd.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Project - InterviewInd"
+              "title": "Outline"
             }
           },
           {
@@ -209,18 +252,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "852edab01ee1f06d",
+  "active": "1367ae9a1938c9ea",
   "lastOpenFiles": [
-    "Project storybook.md",
-    "Project - InterviewInd.md",
+    "Wiki - Deep learning for coders.md",
+    "Wiki - Deep learning.md",
     "Resources - AI tools.md",
+    "Project - storybook.md",
+    "Project - interview.Ind.md",
+    "Project - workflow.md",
+    "crackked/deep learning.md",
+    "assets/Pasted image 20250226212608.png",
+    "assets/Pasted image 20250226212414.png",
     "Welcome.md",
     "Pasted image 20250225231808.png",
     "assets/Pasted image 20250225232459.png",
     "assets/Pasted image 20250225232045.png",
     "assets/Pasted image 20250225231848.png",
     "assets",
-    "crackked/deep learning -.md",
     "crackked",
     "projects/storybook",
     "projects"
