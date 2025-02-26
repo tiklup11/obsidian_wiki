@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "project storybook.md",
+                "file": "Project storybook.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project storybook"
+              "title": "Project storybook"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "project - interviewInd.md",
+                "file": "Project - InterviewInd.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project - interviewInd"
+              "title": "Project - InterviewInd"
             }
           },
           {
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project - interviewInd.md",
+                "file": "Project - InterviewInd.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for project - interviewInd"
+              "title": "Backlinks for Project - InterviewInd"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "project - interviewInd.md",
+                "file": "Project - InterviewInd.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from project - interviewInd"
+              "title": "Outgoing links from Project - InterviewInd"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "project - interviewInd.md",
+                "file": "Project - InterviewInd.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of project - interviewInd"
+              "title": "Outline of Project - InterviewInd"
             }
           },
           {
@@ -211,8 +211,8 @@
   },
   "active": "852edab01ee1f06d",
   "lastOpenFiles": [
-    "project storybook.md",
-    "project - interviewInd.md",
+    "Project storybook.md",
+    "Project - InterviewInd.md",
     "Resources - AI tools.md",
     "Welcome.md",
     "Pasted image 20250225231808.png",
