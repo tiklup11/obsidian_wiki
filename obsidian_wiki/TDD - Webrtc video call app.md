@@ -107,3 +107,87 @@ sequenceDiagram
     SignalingServer->>MobileApp2: Notify peer disconnected
     MobileApp2->>User2: Display peer disconnected
 ```
+
+
+### More detailed P2P video conferencing application
+```mermaid
+sequenceDiagram
+    participant User1 as User 1
+    participant FE1 as Frontend (User 1)
+    participant BE as Backend (Go)
+    participant FE2 as Frontend (User 2)
+    participant User2 as User 2
+
+    %% Room Creation
+    User1->>FE1: Enter application
+    FE1->>User1: Display landing page
+    User1->>FE1: Create new room
+    FE1->>BE: POST /api/rooms (Create room)
+    BE->>BE: Generate room ID
+    BE->>FE1: Return room ID
+    FE1->>User1: Display room ID & UI
+
+    %% WebSocket Connection (First User)
+    FE1->>BE: Connect WebSocket (roomID, userID)
+    BE->>BE: Register client in room
+    BE->>FE1: Connection confirmed
+
+    %% Second User Joins
+    User2->>FE2: Enter application
+    FE2->>User2: Display landing page
+    User2->>FE2: Join room (enter room ID)
+    FE2->>BE: GET /api/rooms/{roomID} (Validate room)
+    BE->>FE2: Room exists response
+    FE2->>User2: Display video conference UI
+
+    %% WebSocket Connection (Second User)
+    FE2->>BE: Connect WebSocket (roomID, userID)
+    BE->>BE: Register client in room
+    BE->>FE2: Connection confirmed
+    BE->>FE1: New user joined notification
+    FE1->>User1: Display "User 2 joined" alert
+
+    %% WebRTC Signaling
+    FE1->>FE1: Create RTCPeerConnection
+    FE1->>FE1: Add local media tracks
+    FE1->>BE: Send SDP offer via WebSocket
+    BE->>FE2: Forward SDP offer
+    FE2->>FE2: Create RTCPeerConnection
+    FE2->>FE2: Set remote description (offer)
+    FE2->>FE2: Add local media tracks
+    FE2->>FE2: Create answer
+    FE2->>BE: Send SDP answer via WebSocket
+    BE->>FE1: Forward SDP answer
+    FE1->>FE1: Set remote description (answer)
+
+    %% ICE Candidate Exchange
+    FE1->>BE: Send ICE candidate via WebSocket
+    BE->>FE2: Forward ICE candidate
+    FE2->>FE2: Add ICE candidate
+    FE2->>BE: Send ICE candidate via WebSocket
+    BE->>FE1: Forward ICE candidate
+    FE1->>FE1: Add ICE candidate
+
+    %% Connection Established
+    FE1-->>FE2: P2P connection established
+    FE2-->>FE1: Media streams flowing
+    FE1->>User1: Display User 2's video
+    FE2->>User2: Display User 1's video
+
+    %% Chat Messages
+    User1->>FE1: Type chat message
+    FE1->>BE: Send chat message via WebSocket
+    BE->>FE2: Forward chat message
+    FE2->>User2: Display chat message
+    User2->>FE2: Type chat message
+    FE2->>BE: Send chat message via WebSocket
+    BE->>FE1: Forward chat message
+    FE1->>User1: Display chat message
+
+    %% Disconnect Flow
+    User2->>FE2: Leave room
+    FE2->>BE: Disconnect WebSocket
+    BE->>FE1: User 2 left notification
+    FE1->>User1: Display "User 2 left" alert
+    FE1->>FE1: Clean up RTCPeerConnection
+```
