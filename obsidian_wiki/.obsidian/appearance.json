@@ -1,3 +1,5 @@
 {
-  "cssTheme": "Obsidian Nord"
+  "cssTheme": "Obsidian Nord",
+  "accentColor": "#056be1",
+  "translucency": true
 }
