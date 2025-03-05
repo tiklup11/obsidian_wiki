@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Wiki - Prompting.md",
-                "mode": "preview",
+                "file": "TDD - BE AuthService.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Wiki - Prompting"
+              "title": "TDD - BE AuthService"
             }
           },
           {
@@ -151,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Wiki - Prompting.md",
+                "file": "TDD - BE AuthService.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Wiki - Prompting"
+              "title": "Backlinks for TDD - BE AuthService"
             }
           },
           {
@@ -170,12 +170,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Wiki - Prompting.md",
+                "file": "TDD - BE AuthService.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Wiki - Prompting"
+              "title": "Outgoing links from TDD - BE AuthService"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Wiki - Prompting.md",
+                "file": "TDD - BE AuthService.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Wiki - Prompting"
+              "title": "Outline of TDD - BE AuthService"
             }
           },
           {
@@ -250,10 +250,11 @@
   },
   "active": "2dd20fc8479ab69b",
   "lastOpenFiles": [
-    "Resources - AI tools.md",
     "Project - interview.Ind.md",
-    "Project - storybook.md",
+    "TDD - BE AuthService.md",
     "Wiki - Prompting.md",
+    "Resources - AI tools.md",
+    "Project - storybook.md",
     "Wiki - Deep learning.md",
     "TDD - Webrtc video call app.md",
     "Project - workflow.md",
