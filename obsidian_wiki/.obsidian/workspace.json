@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interviewind/4. Managing Deployment for Microservices in a Monorepo.md",
+                "file": "wiki/Prompting.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4. Managing Deployment for Microservices in a Monorepo"
+              "title": "Prompting"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interviewind/4. Managing Deployment for Microservices in a Monorepo.md",
+                "file": "wiki/Prompting.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 4. Managing Deployment for Microservices in a Monorepo"
+              "title": "Outline of Prompting"
             }
           },
           {
@@ -278,15 +278,16 @@
   },
   "active": "df57d702cebf2535",
   "lastOpenFiles": [
-    "interviewind/3. Contracts.md",
+    "wiki",
     "interviewind/4. Managing Deployment for Microservices in a Monorepo.md",
+    "interviewind/3. Contracts.md",
     "interviewind/1. Initial tech doc (draft v1).md",
     "assets/mermaid-diagram-2025-04-02-191148.svg",
     "assets/mermaid-diagram-2025-04-02-191038.svg",
     "interviewind/2. Extras.md",
     "Project - storybook.md",
     "Project - workflow.md",
-    "Wiki - Prompting.md",
+    "wiki/Prompting.md",
     "TDD - BE AuthService.md",
     "Resources - AI tools.md",
     "Wiki - Deep learning.md",
