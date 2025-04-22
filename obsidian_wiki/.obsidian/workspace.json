@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wiki/Prompting.md",
+                "file": "interviewind/1. Initial tech doc (draft v1).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Prompting"
+              "title": "Outline of 1. Initial tech doc (draft v1)"
             }
           },
           {
@@ -276,8 +276,9 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "df57d702cebf2535",
+  "active": "3e881ec532d3ee9c",
   "lastOpenFiles": [
+    "wiki/Prompting.md",
     "wiki",
     "interviewind/4. Managing Deployment for Microservices in a Monorepo.md",
     "interviewind/3. Contracts.md",
@@ -287,7 +288,6 @@
     "interviewind/2. Extras.md",
     "Project - storybook.md",
     "Project - workflow.md",
-    "wiki/Prompting.md",
     "TDD - BE AuthService.md",
     "Resources - AI tools.md",
     "Wiki - Deep learning.md",
