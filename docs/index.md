@@ -4,4 +4,4 @@
 [Interviewind project](./interviewind/initial_doc.md)
 
 ## deep_leanring
-[deep_learning](./deepleanring/)
+[deep_learning](./deeplearning/index.md)

@@ -1,0 +1,3 @@
+[deep_learning](./deep_leanring.md)
+[deep_learning_for_coders](./deeplearning_for_coders.md)
+[resources](./resources.md)
