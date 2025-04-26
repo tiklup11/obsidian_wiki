@@ -1,5 +1,3 @@
-# index
-
 ### Interview_ind_project
 
 - [Interviewind project](./interviewind/initial_doc.md)
