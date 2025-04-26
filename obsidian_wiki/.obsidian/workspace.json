@@ -64,18 +64,6 @@
             }
           },
           {
-            "id": "f7f729d076175ffa",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
-            }
-          },
-          {
             "id": "1560e50f447d4901",
             "type": "leaf",
             "state": {
@@ -118,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -175,7 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 254.50390243530273
+    "width": 289.50390243530273
   },
   "right": {
     "id": "201b9450d3d4a930",
@@ -288,13 +276,14 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "f7f729d076175ffa",
+  "active": "3e881ec532d3ee9c",
   "lastOpenFiles": [
+    "Untitled.md",
+    "interviewind/1. Initial tech doc (draft v1).md",
     "wiki/Prompting.md",
     "wiki",
     "interviewind/4. Managing Deployment for Microservices in a Monorepo.md",
     "interviewind/3. Contracts.md",
-    "interviewind/1. Initial tech doc (draft v1).md",
     "assets/mermaid-diagram-2025-04-02-191148.svg",
     "assets/mermaid-diagram-2025-04-02-191038.svg",
     "interviewind/2. Extras.md",
