@@ -276,8 +276,12 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "3e881ec532d3ee9c",
+  "active": "df57d702cebf2535",
   "lastOpenFiles": [
+    "assets/ css/style.scss",
+    "assets/ css",
+    "_config.yml",
+    "index.html",
     "Untitled.md",
     "interviewind/1. Initial tech doc (draft v1).md",
     "wiki/Prompting.md",
