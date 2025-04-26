@@ -1,6 +1,9 @@
-Related docs - 
-[[3. Contracts]]
 # Technical Design Document: AI Interview Video Call Application (Revised)
+
+[goback](./)
+[contracts](./contracts.md)
+[deployment](./deploy_doc.md)
+[extras](./extras.md)
 
 ## 1. Introduction
 
@@ -33,7 +36,6 @@ graph TD
     SignalingService -- Control/API --> SFU[Manages SFU Rooms/Permissions]
 ```
 
-
 _Diagram revised to clarify Signaling Service control over SFU._
 
 ## 3. Domain Model (DDD)
@@ -41,155 +43,83 @@ _Diagram revised to clarify Signaling Service control over SFU._
 We identify the following core domains and aggregates:
 
 - **Interview Domain:**
-    
-    - **`InterviewSession`** (Aggregate Root): Represents a single interview instance.
-        
-        - `SessionID` (Entity ID)
-            
-        - `Status` (Value Object: Scheduled, InProgress, Completed, Cancelled)
-            
-        - `ScheduledTime` (Value Object)
-            
-        - `Participants` (List of `Participant` Entities)
-            
-        - `ConversationHistory` (List of `Interaction` Value Objects)
-            
-        - `JobDescription` (Value Object)
-            
-        - `AccessPermissions` (Value Object Map: e.g., UserID -> Role)
-            
-    - **`Participant`** (Entity): Represents a user (Candidate, Human Interviewer, AI) connected to the session.
-        
-        - `ParticipantID` (Entity ID - unique within a session)
-            
-        - `UserID` (Value Object - links to a global user account)
-            
-        - `Role` (Value Object: Candidate, Interviewer, AI)
-            
-        - `ConnectionStatus` (Value Object: Joining, Connected, Disconnected, Failed)
-            
-        - `SignalingID` (Value Object - e.g., WebSocket connection ID)
-            
-    - **`Interaction`** (Value Object): Records a turn in the conversation.
-        
-        - `Timestamp`
-            
-        - `SpeakerParticipantID` (`ParticipantID`)
-            
-        - `Type` (Question, Answer, Comment, SystemMessage)
-            
-        - `Content` (Text)
-            
-        - `AudioReference` (Optional Value Object - link to stored audio)
-            
+  - **`InterviewSession`** (Aggregate Root): Represents a single interview instance.
+    - `SessionID` (Entity ID)
+    - `Status` (Value Object: Scheduled, InProgress, Completed, Cancelled)
+    - `ScheduledTime` (Value Object)
+    - `Participants` (List of `Participant` Entities)
+    - `ConversationHistory` (List of `Interaction` Value Objects)
+    - `JobDescription` (Value Object)
+    - `AccessPermissions` (Value Object Map: e.g., UserID -> Role)
+  - **`Participant`** (Entity): Represents a user (Candidate, Human Interviewer, AI) connected to the session.
+    - `ParticipantID` (Entity ID - unique within a session)
+    - `UserID` (Value Object - links to a global user account)
+    - `Role` (Value Object: Candidate, Interviewer, AI)
+    - `ConnectionStatus` (Value Object: Joining, Connected, Disconnected, Failed)
+    - `SignalingID` (Value Object - e.g., WebSocket connection ID)
+  - **`Interaction`** (Value Object): Records a turn in the conversation.
+    - `Timestamp`
+    - `SpeakerParticipantID` (`ParticipantID`)
+    - `Type` (Question, Answer, Comment, SystemMessage)
+    - `Content` (Text)
+    - `AudioReference` (Optional Value Object - link to stored audio)
 - **AI Domain:**
-    
-    - **`AIConversation`** (Aggregate Root): Manages the state of the AI's interaction within a specific `InterviewSession`.
-        
-        - `SessionID` (Entity ID - maps 1:1 to InterviewSession)
-            
-        - `CurrentState` (Value Object: Idle, Listening, Processing, Speaking)
-            
-        - `CurrentTopic` (Value Object)
-            
-        - `EvaluationContext` (Value Object: Accumulated understanding, scores, notes)
-            
-        - `PendingQuestion` (Value Object - stores the next question before TTS/delivery)
-            
+  - **`AIConversation`** (Aggregate Root): Manages the state of the AI's interaction within a specific `InterviewSession`.
+    - `SessionID` (Entity ID - maps 1:1 to InterviewSession)
+    - `CurrentState` (Value Object: Idle, Listening, Processing, Speaking)
+    - `CurrentTopic` (Value Object)
+    - `EvaluationContext` (Value Object: Accumulated understanding, scores, notes)
+    - `PendingQuestion` (Value Object - stores the next question before TTS/delivery)
 - **User Domain (Potentially separate service or part of Interview Service):**
-    
-    - **`User`** (Aggregate Root): Represents a registered user account.
-        
-        - `UserID` (Entity ID)
-            
-        - `Name`
-            
-        - `Email`
-            
-        - `AuthenticationDetails`
-            
+  - **`User`** (Aggregate Root): Represents a registered user account.
+    - `UserID` (Entity ID)
+    - `Name`
+    - `Email`
+    - `AuthenticationDetails`
 
 ## 4. Authentication and Authorization
 
 - **Authentication:** Users authenticate before accessing the application (e.g., via JWT tokens issued by a dedicated Auth service or integrated within the User domain). The API Gateway validates the token on incoming requests.
-    
 - **Authorization:**
-    
-    - The Interview Service checks if the authenticated `UserID` has permission (based on `InterviewSession.AccessPermissions`) to join or manage a specific `SessionID`.
-        
-    - Roles (`Candidate`, `Interviewer`) dictate allowed actions within a session (e.g., only AI/Interviewer can trigger certain AI actions).
-        
-    - Signaling Service authorizes WebSocket connections based on a temporary token or session linkage provided after successful REST API join.
-        
+  - The Interview Service checks if the authenticated `UserID` has permission (based on `InterviewSession.AccessPermissions`) to join or manage a specific `SessionID`.
+  - Roles (`Candidate`, `Interviewer`) dictate allowed actions within a session (e.g., only AI/Interviewer can trigger certain AI actions).
+  - Signaling Service authorizes WebSocket connections based on a temporary token or session linkage provided after successful REST API join.
 
 ## 5. Components Deep Dive
 
 - **Frontend (React TSX):**
-    
-    - **UI Components:** `VideoGrid`, `ParticipantVideo`, `AIChatDisplay`/`Transcript`, `Controls` (Mute/Unmute, Video On/Off, Leave, Start/Stop Recording - future).
-        
-    - **State Management:** Zustand (preferred for simplicity) or Redux Toolkit. Manages session state, participants, connection status, media device settings, AI messages/status.
-        
-    - **WebRTC Client:** Handles interaction with the SFU. Uses `getUserMedia` for media, negotiates connections via Signaling Service, manages `RTCPeerConnection` for SFU transport.
-        
-    - **API Client:** Axios (with interceptors for auth tokens). WebSocket client for signaling.
-        
+  - **UI Components:** `VideoGrid`, `ParticipantVideo`, `AIChatDisplay`/`Transcript`, `Controls` (Mute/Unmute, Video On/Off, Leave, Start/Stop Recording - future).
+  - **State Management:** Zustand (preferred for simplicity) or Redux Toolkit. Manages session state, participants, connection status, media device settings, AI messages/status.
+  - **WebRTC Client:** Handles interaction with the SFU. Uses `getUserMedia` for media, negotiates connections via Signaling Service, manages `RTCPeerConnection` for SFU transport.
+  - **API Client:** Axios (with interceptors for auth tokens). WebSocket client for signaling.
 - **API Gateway (Go - e.g., Gin/Echo):**
-    
-    - Validates JWT tokens.
-        
-    - Routes requests based on path prefixes.
-        
-    - Aggregates responses if needed (though less common in pure microservices).
-        
-    - Handles TLS termination.
-        
+  - Validates JWT tokens.
+  - Routes requests based on path prefixes.
+  - Aggregates responses if needed (though less common in pure microservices).
+  - Handles TLS termination.
 - **Interview Service (Go):**
-    
-    - **Repositories:** `InterviewSessionRepository`, `UserRepository` (if User domain included).
-        
-    - **Application Services:** `CreateInterview`, `AuthorizeJoin`, `GetSessionDetails`, `AddParticipant`, `UpdateParticipantStatus`, `RecordInteraction`.
-        
-    - **Domain Logic:** Encapsulated within aggregates.
-        
-    - **Database:** PostgreSQL chosen for its relational structure and ACID compliance. Stores sessions, participant details (linked to users), permissions, conversation history.
-        
+  - **Repositories:** `InterviewSessionRepository`, `UserRepository` (if User domain included).
+  - **Application Services:** `CreateInterview`, `AuthorizeJoin`, `GetSessionDetails`, `AddParticipant`, `UpdateParticipantStatus`, `RecordInteraction`.
+  - **Domain Logic:** Encapsulated within aggregates.
+  - **Database:** PostgreSQL chosen for its relational structure and ACID compliance. Stores sessions, participant details (linked to users), permissions, conversation history.
 - **Signaling Service (Go):**
-    
-    - Uses WebSockets (Gorilla WebSocket).
-        
-    - Manages signaling "rooms" corresponding to `SessionID`.
-        
-    - Authenticates WebSocket connections (e.g., using a short-lived token from Interview Service).
-        
-    - Relays WebRTC SDP Offers/Answers and ICE Candidates between clients and the SFU.
-        
-    - **SFU Coordination:** Communicates with the SFU (via its API or control protocol) to manage media rooms, participant permissions within the SFU, and stream forwarding rules.
-        
-    - Broadcasts application-level events (join, leave, speaking status) to clients in the same room.
-        
+  - Uses WebSockets (Gorilla WebSocket).
+  - Manages signaling "rooms" corresponding to `SessionID`.
+  - Authenticates WebSocket connections (e.g., using a short-lived token from Interview Service).
+  - Relays WebRTC SDP Offers/Answers and ICE Candidates between clients and the SFU.
+  - **SFU Coordination:** Communicates with the SFU (via its API or control protocol) to manage media rooms, participant permissions within the SFU, and stream forwarding rules.
+  - Broadcasts application-level events (join, leave, speaking status) to clients in the same room.
 - **AI Service (Go):**
-    
-    - **State Machine:** Manages `AIConversation.CurrentState` (Idle -> Listening -> Processing -> Speaking -> Idle/Listening). Transitions triggered by events (e.g., candidate stops speaking, Gemini response received).
-        
-    - Listens for events indicating candidate speech completion (e.g., message from Frontend via Gateway or direct event bus).
-        
-    - Constructs prompts for Gemini API. Handles errors and retries for external API calls.
-        
-    - Interfaces with STT/TTS services.
-        
-    - Updates `InterviewSession.ConversationHistory` via Interview Service API or event bus.
-        
-    - Communicates AI status (speaking, processing) via Signaling Service for UI updates.
-        
+  - **State Machine:** Manages `AIConversation.CurrentState` (Idle -> Listening -> Processing -> Speaking -> Idle/Listening). Transitions triggered by events (e.g., candidate stops speaking, Gemini response received).
+  - Listens for events indicating candidate speech completion (e.g., message from Frontend via Gateway or direct event bus).
+  - Constructs prompts for Gemini API. Handles errors and retries for external API calls.
+  - Interfaces with STT/TTS services.
+  - Updates `InterviewSession.ConversationHistory` via Interview Service API or event bus.
+  - Communicates AI status (speaking, processing) via Signaling Service for UI updates.
 - **Media Server (SFU - e.g., Pion/LiveKit):**
-    
-    - Requires separate deployment and management.
-        
-    - Receives encrypted media streams (DTLS/SRTP).
-        
-    - Forwards streams based on Signaling Service/application logic instructions.
-        
+  - Requires separate deployment and management.
+  - Receives encrypted media streams (DTLS/SRTP).
+  - Forwards streams based on Signaling Service/application logic instructions.
 
 ## 6. Key Workflows & Sequence Diagrams (Revised & Extended)
 
