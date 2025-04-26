@@ -1,4 +1,7 @@
-[[Wiki - Deep learning for coders]]
-[[1. Initial tech doc (draft v1)]]
 
+# index
+## Interview_ind_project
 [Interviewind project](./interviewind/initial_doc.md)
+
+## deep_leanring
+[deep_learning](./deepleanring/)
