@@ -1,7 +1,12 @@
-#
+# Intro
 - Neural networks dont require us to build features they build them for us.
-- We dont give it features to train on, we ask it to learn features
+- We dont give it features to train on, we ask it to learn features.
+- Usecases like the following are now possible coz we dont have to figure out the features ourselfs instread the neural-net model does it for us.
 
+## Features that model learn - visual rep - [object ditection]
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/1c84b071-d7bd-4124-a81b-b66d1a694af2" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/9d2cc683-e465-4f45-bc3c-f857eac32851" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/6f092ecc-1b5d-44eb-91c1-671ea0aca777" />
 
 ### Usecases
 - Natural language processing (NLP):: Answering questions; speech recognition; summarizing documents; classifying documents; finding names, dates, etc. in documents; searching for articles mentioning a concept
@@ -17,3 +22,7 @@ Recommendation systems:: Web search; product recommendations; home page layout
 ### Resources
 - [https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf](https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf)
 
+> Image recogniation can also be used to classify sound 
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/5f8f4a47-376a-4892-8ee0-a2ef9129e04d" />
+
+> 
